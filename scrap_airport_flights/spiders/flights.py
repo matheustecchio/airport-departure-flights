@@ -1,4 +1,5 @@
 import scrapy
+import time
 
 
 class FlightsSpider(scrapy.Spider):
@@ -13,6 +14,10 @@ class FlightsSpider(scrapy.Spider):
         airport_names:list   = response.css("#scheduled-board .hint span::text").extract()
         flight_numbers:list  = response.css("#scheduled-board .flight-ident a::text").extract()
         flight_quantity:int  = len(flight_numbers)
+        
+        yield {
+            "Date": time.strftime("%Y-%m-%d %H:%M:%S")
+            }
         
         for flight in range(flight_quantity):
             yield {
