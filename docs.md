@@ -7,3 +7,9 @@
 | #scheduled-board .hint+ span a | return the destination airport IATA code | 'LTN'
 | #scheduled-board .hint span | return the destination airport name | 'London Luton'
 | #scheduled-board .flight-ident a | return the flight number | 'EI894','FR7721'
+
+
+## Cmd
+At the root of the application, runs:
+
+`scrapy runspider scrap_airport_flights/spiders/flights.py -O flights.json`
