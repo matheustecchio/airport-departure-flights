@@ -2,7 +2,7 @@ import subprocess
 import platform
 
 script = """
-scrapy runspider scrap_airport_flights/spiders/flights.py -O flights.json
+scrapy runspider scrap_airport_flights/spiders/flights.py -O flights.csv
 """
 
 if platform.system() == "Windows":
