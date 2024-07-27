@@ -1,0 +1,20 @@
+Departure Time,Aircraft Model,Destination IATA,Destination Name,Flight Number
+15:35,B738,STN,London Stansted,RYR906
+15:55,B738,REU,Reus,RYR9006
+16:25,A20N,LHR,London Heathrow,EIN722
+16:35,B38M,FAO,Faro,RYR9947
+16:35,B38M,LGW,London Gatwick,RYR7721
+16:45,E190,CDG,Charles de Gaulle/Roissy,HOP1095
+16:50,A320,AGP,Malaga,EIN886
+17:20,E190,AMS,Amsterdam Schiphol,KLM1130
+20:10,B738,BOD,Bordeaux-Merignac,RYR9009
+20:30,B38M,AGP,Malaga,RYR7739
+20:40,A20N,LHR,London Heathrow,EIN724
+20:45,B38M,TFS,Tenerife South (Reina Sofia),RYR1402
+21:00,B738,STN,London Stansted,RYR908
+21:10,B738,BGY,Orio al Serio Int'l,RYR9051
+05:55,B738,FAO,Faro,RYR5779
+05:55,B38M,ACE,Arrecife (Lanzarote),RYR7725
+05:55,B738,STN,London Stansted,RYR902
+06:00,B738,VCE,Marco Polo Int'l (Marco Polo Venice),RYR2716
+06:10,A320,AMS,Amsterdam Schiphol,EIN840
