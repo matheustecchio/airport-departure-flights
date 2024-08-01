@@ -3,7 +3,6 @@ import pandas as pd
 from pathlib import Path
 from datetime import datetime, timedelta
 
-
 def get_raw_data():
     data_path = Path("./data/cork/raw_flights.csv")
     df = pd.read_csv(data_path)
@@ -58,7 +57,7 @@ def create_busy_times(df):
     # Process each time range
     for start, end in time_ranges:
         # Filter flights within the current time range
-        flights_in_range = df[(df['Departure Time'] >= start) & (df['Departure Time'] < end)]
+        flights_in_range = df[(df['Departure Time'] >= start.time()) & (df['Departure Time'] < end.time())]
         
         # Count the number of flights
         flight_count = len(flights_in_range)
@@ -81,11 +80,9 @@ def create_busy_times(df):
     return busy_times_df
 
 def filter_if_no_flights(busy_times_df):
-        # Filtering if time ranges has no flights
+    # Filtering if time ranges has no flights
     busy_times_df = busy_times_df[busy_times_df['Number of Flights'] > 0]
-
     busy_times_df.reset_index(drop=True, inplace=True)
-
     return busy_times_df
 
 def filter_tomorrow_flights(busy_times_df):
@@ -104,7 +101,7 @@ def filter_tomorrow_flights(busy_times_df):
         if start_time > time_now:
             pass
         else:
-            # Remove this rows
+            # Remove these rows
             indices_to_drop.append(index)
 
     # Drop the rows that are not within the desired time range
