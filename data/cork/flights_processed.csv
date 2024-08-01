@@ -1,12 +1,12 @@
 Departure Time,Aircraft Model,Destination IATA,Destination Name,Flight Number,Minimum Passengers
 18:40:00,AT72,BRS,Bristol Int'l,EAI3842,
-21:25:00,B38M,GRO,Girona-Costa Brava,RYR9039,178.0
 21:25:00,A20N,LHR,London Heathrow,EIN724,140.0
+21:25:00,B38M,GRO,Girona-Costa Brava,RYR9039,178.0
 23:10:00,B738,STN,London Stansted,RYR908,162.0
 23:35:00,B38M,MAN,Manchester,RYR2088,178.0
-05:55:00,B738,CRL,Brussels South Charleroi,RYR2976,162.0
-05:55:00,B738,BOD,Bordeaux-Merignac,RYR9009,162.0
 05:55:00,B738,STN,London Stansted,RYR902,162.0
+05:55:00,B738,BOD,Bordeaux-Merignac,RYR9009,162.0
+05:55:00,B738,CRL,Brussels South Charleroi,RYR2976,162.0
 06:10:00,A320,AMS,Amsterdam Schiphol,EIN840,150.0
 06:25:00,E75L,AMS,Amsterdam Schiphol,KLM1126,
 06:50:00,B38M,ALC,Alicante,RYR4157,178.0
