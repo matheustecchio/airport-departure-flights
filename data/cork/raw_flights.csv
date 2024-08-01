@@ -1,14 +1,13 @@
 Departure Time,Aircraft Model,Destination IATA,Destination Name,Flight Number
 18:40,AT72,BRS,Bristol Int'l,EAI3842
 19:35,B38M,VLC,Valencia,RYR8109
-19:40,B738,BCN,Barcelona Int'l,RYR9308
-20:40,A20N,LHR,London Heathrow,EIN724
 21:25,B38M,GRO,Girona-Costa Brava,RYR9039
+21:25,A20N,LHR,London Heathrow,EIN724
 23:10,B738,STN,London Stansted,RYR908
 23:35,B38M,MAN,Manchester,RYR2088
+05:55,B738,STN,London Stansted,RYR902
 05:55,B738,BOD,Bordeaux-Merignac,RYR9009
 05:55,B738,CRL,Brussels South Charleroi,RYR2976
-05:55,B738,STN,London Stansted,RYR902
 06:10,A320,AMS,Amsterdam Schiphol,EIN840
 06:25,E75L,AMS,Amsterdam Schiphol,KLM1126
 06:50,B38M,ALC,Alicante,RYR4157
@@ -19,3 +18,4 @@ Departure Time,Aircraft Model,Destination IATA,Destination Name,Flight Number
 08:35,B38M,AGP,Malaga,RYR7735
 09:35,B738,FAO,Faro,RYR5779
 09:50,B738,CCF,Carcassonne Salvaza,RYR9019
+10:55,B738,FCO,Leonardo da Vinci Int'l (Fiumicino Int'l),RYR5854
