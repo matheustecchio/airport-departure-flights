@@ -1,7 +1,7 @@
 Departure Time,Aircraft Model,Destination IATA,Destination Name,Flight Number,Minimum Passengers
 18:40:00,AT72,BRS,Bristol Int'l,EAI3842,
 21:25:00,A20N,LHR,London Heathrow,EIN724,140.0
-21:25:00,B38M,GRO,Girona-Costa Brava,RYR9039,178.0
+22:10:00,B38M,GRO,Girona-Costa Brava,RYR9039,178.0
 23:10:00,B738,STN,London Stansted,RYR908,162.0
 23:35:00,B38M,MAN,Manchester,RYR2088,178.0
 05:55:00,B738,STN,London Stansted,RYR902,162.0
