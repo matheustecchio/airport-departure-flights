@@ -1,8 +1,8 @@
 import scrapy
 
 
-class FlightsSpider(scrapy.Spider):
-    name            = "flights"
+class CorkSpider(scrapy.Spider):
+    name            = "cork"
     allowed_domains = ["www.flightaware.com"]
     start_urls      = ["https://www.flightaware.com/live/airport/EICK"]
 

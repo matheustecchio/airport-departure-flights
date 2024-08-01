@@ -3,10 +3,10 @@ import platform
 
 
 windows_script = """
-scrapy runspider .\\scrap_airport_flights\\spiders\\flights.py -O flights.csv
+scrapy runspider .\\scrap_airport_flights\\spiders\\cork.py -O .\\data\\cork.csv
 """
 unix_script = """
-scrapy runspider scrap_airport_flights/spiders/flights.py -O flights.csv
+scrapy runspider scrap_airport_flights/spiders/cork.py -O ./data/cork.csv
 """
 
 try:
