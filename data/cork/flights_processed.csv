@@ -1,0 +1,21 @@
+Departure Time,Aircraft Model,Destination IATA,Destination Name,Flight Number,Minimum Passengers
+18:40:00,AT72,BRS,Bristol Int'l,EAI3842,
+21:25:00,A20N,LHR,London Heathrow,EIN724,140.0
+22:10:00,B38M,GRO,Girona-Costa Brava,RYR9039,178.0
+23:10:00,B738,STN,London Stansted,RYR908,162.0
+23:35:00,B38M,MAN,Manchester,RYR2088,178.0
+05:55:00,B738,STN,London Stansted,RYR902,162.0
+05:55:00,B738,BOD,Bordeaux-Merignac,RYR9009,162.0
+05:55:00,B738,CRL,Brussels South Charleroi,RYR2976,162.0
+06:10:00,A320,AMS,Amsterdam Schiphol,EIN840,150.0
+06:25:00,E75L,AMS,Amsterdam Schiphol,KLM1126,
+06:50:00,B38M,ALC,Alicante,RYR4157,178.0
+07:30:00,A20N,LHR,London Heathrow,EIN710,140.0
+07:35:00,A320,TFS,Tenerife South (Reina Sofia),EIN874,150.0
+08:20:00,B738,GDN,Gdansk Lech Walesa,RYS8781,162.0
+08:25:00,B738,POZ,Poznań-Ławica,RYS7245,162.0
+08:35:00,B38M,AGP,Malaga,RYR7735,178.0
+09:35:00,B738,FAO,Faro,RYR5779,162.0
+09:50:00,B738,CCF,Carcassonne Salvaza,RYR9019,162.0
+10:55:00,B738,FCO,Leonardo da Vinci Int'l (Fiumicino Int'l),RYR5854,162.0
+11:00:00,E190,CDG,Charles de Gaulle/Roissy,HOP1079,96.0
