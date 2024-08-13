@@ -42,7 +42,7 @@ def create_busy_times(df):
         while current_time < end_time:
             end_interval_time = current_time + timedelta(minutes=interval_minutes)
             time_ranges.append((current_time.time(), end_interval_time.time()))
-            current_time += timedelta(minutes=interval_minutes)  # 30-minute steps
+            current_time += timedelta(minutes=interval_minutes)
         return time_ranges
 
     # Create the time ranges
@@ -102,7 +102,7 @@ def filter_tomorrow_flights(busy_times_df):
 
     # Iterate over the 'Time Range' column to check each time range
     for index, row in busy_times_df.iterrows():
-        start_time = row["Time Range"].split(" to ")[0]
+        start_time = row["Start Time"]
         start_time = pd.to_datetime(start_time, format='%H:%M').strftime('%H:%M')
         
         if start_time > time_now:
