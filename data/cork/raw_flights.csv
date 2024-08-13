@@ -1,21 +1,19 @@
 Departure Time,Aircraft Model,Destination IATA,Destination Name,Flight Number
-18:40,AT72,BRS,Bristol Int'l,EAI3842
-21:25,A20N,LHR,London Heathrow,EIN724
-22:10,B38M,GRO,Girona-Costa Brava,RYR9039
-23:10,B738,STN,London Stansted,RYR908
-23:35,B38M,MAN,Manchester,RYR2088
-05:55,B738,STN,London Stansted,RYR902
-05:55,B738,BOD,Bordeaux-Merignac,RYR9009
-05:55,B738,CRL,Brussels South Charleroi,RYR2976
-06:10,A320,AMS,Amsterdam Schiphol,EIN840
-06:25,E75L,AMS,Amsterdam Schiphol,KLM1126
-06:50,B38M,ALC,Alicante,RYR4157
-07:30,A20N,LHR,London Heathrow,EIN710
-07:35,A320,TFS,Tenerife South (Reina Sofia),EIN874
-08:20,B738,GDN,Gdansk Lech Walesa,RYS8781
-08:25,B738,POZ,Poznań-Ławica,RYS7245
-08:35,B38M,AGP,Malaga,RYR7735
-09:35,B738,FAO,Faro,RYR5779
-09:50,B738,CCF,Carcassonne Salvaza,RYR9019
-10:55,B738,FCO,Leonardo da Vinci Int'l (Fiumicino Int'l),RYR5854
-11:00,E190,CDG,Charles de Gaulle/Roissy,HOP1079
+14:17,GLF5,LTN,London Luton,N501HM
+15:00,B738,AGP,Malaga,RYR424
+15:25,B738,TFS,Tenerife South (Reina Sofia),RYR7735
+15:40,B38M,REU,Reus,RYR1402
+15:45,B738,ALC,Alicante,RYR9006
+16:20,B738,LHR,London Heathrow,RYR4157
+16:25,A20N,CDG,Charles de Gaulle/Roissy,EIN722
+16:45,E170,AGP,Malaga,HOP1095
+16:50,A320,AMS,Amsterdam Schiphol,EIN886
+17:25,E190,FAO,Faro,KLM1128
+17:55,B38M,STN,London Stansted,RYR9947
+18:00,B738,BRS,Bristol Int'l,RYR908
+18:40,AT72,LHR,London Heathrow,EAI3842
+20:40,A20N,MAN,Manchester,EIN724
+21:25,B738,STN,London Stansted,RYR2088
+05:55,B738,AHO,Fertilia (Alghero),RYR902
+05:55,B738,MAN,Manchester,RYR8127
+05:55,B38M,AMS,Amsterdam Schiphol,RYR1862

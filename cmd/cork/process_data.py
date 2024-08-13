@@ -42,16 +42,18 @@ def create_busy_times(df):
         while current_time < end_time:
             end_interval_time = current_time + timedelta(minutes=interval_minutes)
             time_ranges.append((current_time.time(), end_interval_time.time()))
-            current_time += timedelta(minutes=interval_minutes // 2)  # 30-minute steps
+            current_time += timedelta(minutes=interval_minutes)  # 30-minute steps
         return time_ranges
 
     # Create the time ranges
-    start_time = datetime.strptime('04:00', '%H:%M')
+    start_time = datetime.strptime('00:00', '%H:%M')
     end_time = datetime.strptime('23:59', '%H:%M')
     time_ranges = generate_time_ranges(start_time, end_time, 60)
 
     # Initialize lists to store results
-    time_range_list = []
+    time_range_start = []
+    time_range_end = []
+
     flight_count_list = []
     passenger_count_list = []
 
@@ -67,13 +69,15 @@ def create_busy_times(df):
         total_minimum_passengers = flights_in_range['Minimum Passengers'].sum()
         
         # Append results to lists
-        time_range_list.append(f"{start.strftime('%H:%M')} to {end.strftime('%H:%M')}")
+        time_range_start.append(f"{start.strftime('%H:%M')}")
+        time_range_end.append(f"{end.strftime('%H:%M')}")
         flight_count_list.append(flight_count)
         passenger_count_list.append(total_minimum_passengers)
 
     # Create the resulting DataFrame
     busy_times_df = pd.DataFrame({
-        'Time Range': time_range_list,
+        'Start Time': time_range_start,
+        'End Time': time_range_end,
         'Number of Flights': flight_count_list,
         'Minimum Passengers': passenger_count_list
     })
