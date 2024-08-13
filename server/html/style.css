@@ -1,0 +1,13 @@
+body {
+    font-family: Arial, sans-serif;
+}
+h1, h2 {
+    text-align: center;
+}
+iframe {
+    border: none;
+    width: 30%;
+    height: 50em;
+    margin: 10px;
+
+}
