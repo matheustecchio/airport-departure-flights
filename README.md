@@ -23,13 +23,15 @@ git clone https://github.com/matheustecchio/airport-departure-flights.git
 To use this project, follow these commands in your terminal or command prompt:
 
 ```
-python3 cmd/cork/main.py
+python3 cmd/main.py
 ```
 
 This will update all the databases with live data.
 
 Then, open the html file containing the application data on a more readable way.
 [html/index.html](/html/index.html)
+
+Or access the databases directly from [./data](./data/) where you will find 3 directories(Cork, Dublin Shannon), containing the application data separated by airports
 
 ---
 
