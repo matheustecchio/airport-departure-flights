@@ -18,7 +18,7 @@ def scrap():
         print("An error occurred while executing the scraping script.")
         exit(1)  
         
-    print("\nData scrapping completed successfully!\n")
+    print("Data scrapping completed successfully!")
 
 if __name__ == "__main__":
     scrap()

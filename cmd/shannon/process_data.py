@@ -126,7 +126,7 @@ def save(busy_times_df, df):
     df.to_csv(flights_path, index=False)
 
 def process_data():
-     # Load raw data
+    # Load raw data
     df = get_raw_data()
     
     # Join with minimum capacity
@@ -144,7 +144,7 @@ def process_data():
     # Save everything
     save(busy_times_df, df)
     
-    print("\nData processing completed successfully!\n")
+    print("Data processing completed successfully!")
         
 if __name__ == "__main__":
-   process_data()
+    process_data()

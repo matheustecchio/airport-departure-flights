@@ -3,6 +3,7 @@ from shannon.scrap import scrap
 from shannon.convert_csv_to_html import convert_csv_to_html
 
 def main():
+    print("\nShannon is running...")
     scrap()
     process_data()
     convert_csv_to_html()
