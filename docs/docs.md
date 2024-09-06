@@ -28,9 +28,3 @@
 
 > Some `Destination Name` has Unicode characters which represent non-ASCII characters.
 
-## Cmd
-At the root of the application, runs:
-
-```bash
-python main.py
-```
