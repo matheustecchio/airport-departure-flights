@@ -25,7 +25,7 @@ git clone https://github.com/matheustecchio/airport-departure-flights.git
 
 ## 🖱 How to use
 
-To use this project, follow these commands in your terminal or command prompt:
+To use this application, follow these commands in your terminal or command prompt in the main directory:
 
 ```
 python3 cmd/main.py
