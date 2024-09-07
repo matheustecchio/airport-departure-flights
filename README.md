@@ -4,7 +4,7 @@ Application to return all departure flights information for a specific airport i
 
 This project began to check how busy the airport gate's area would be. This information is very important for staff working in the gate area, as I was when I created this application.
 
-### Why not to create the arrives flights?
+### Why not to create the arrival flights?
 Having an arriving flights section wouldn't be useful for the purpose of the project, which is to check how busy it will be, because most of the customers in the landing area of the airport are the airport's staffs and non-passengers in general, making it difficult to predict with flight information.
 
 ## 💻 Requirements
