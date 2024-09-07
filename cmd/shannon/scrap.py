@@ -3,10 +3,10 @@ import platform
 
 def scrap():
     windows_script = """
-    scrapy runspider .\\scrap_airport_flights\\spiders\\cork.py -O .\\data\\cork\\raw_flights.csv
+    scrapy runspider .\\scrap_airport_flights\\spiders\\shannon.py -O .\\data\\shannon\\raw_flights.csv
     """
     unix_script = """
-    scrapy runspider scrap_airport_flights/spiders/cork.py -O ./data/cork/raw_flights.csv
+    scrapy runspider scrap_airport_flights/spiders/shannon.py -O ./data/shannon/raw_flights.csv
     """
 
     try:
