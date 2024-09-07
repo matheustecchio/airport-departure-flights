@@ -4,8 +4,8 @@ from pathlib import Path
 from datetime import datetime, timedelta
 
 
-def get_raw_data():
-    data_path = Path("./data/shannon/raw_flights.csv")
+def get_raw_data(airport: str):
+    data_path = Path("./data/" + airport + "/raw_flights.csv")
     df = pd.read_csv(data_path)
     
     # Convert departure times to datetime format for better analysis
@@ -117,17 +117,17 @@ def filter_tomorrow_flights(busy_times_df):
 
     return busy_times_df
 
-def save(busy_times_df, df):
+def save(busy_times_df, df, airport: str):
     # Saving everything
-    busy_times_path = Path("./data/shannon/busy_times.csv")
+    busy_times_path = Path("./data/" + airport + "/busy_times.csv")
     busy_times_df.to_csv(busy_times_path, index=False)
 
-    flights_path = Path("./data/shannon/flights_processed.csv")
+    flights_path = Path("./data/" + airport + "/flights_processed.csv")
     df.to_csv(flights_path, index=False)
 
-def process_data():
+def process_data(airport: str):
     # Load raw data
-    df = get_raw_data()
+    df = get_raw_data(airport)
     
     # Join with minimum capacity
     df = join_minimum_capacity(df)
@@ -142,9 +142,7 @@ def process_data():
     busy_times_df = filter_tomorrow_flights(busy_times_df)
     
     # Save everything
-    save(busy_times_df, df)
-    
-    print("Data processing completed successfully!")
-        
+    save(busy_times_df, df, airport)
+            
 if __name__ == "__main__":
     process_data()

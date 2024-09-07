@@ -1,13 +1,9 @@
 import subprocess
 import platform
 
-def scrap():
-    windows_script = """
-    scrapy runspider .\\scrap_airport_flights\\spiders\\dublin.py -O .\\data\\dublin\\raw_flights.csv
-    """
-    unix_script = """
-    scrapy runspider scrap_airport_flights/spiders/dublin.py -O ./data/dublin/raw_flights.csv
-    """
+def scrap(airport: str):
+    windows_script = "scrapy runspider .\\scrap_airport_flights\\spiders\\" + airport + ".py -O .\\data\\cork\\raw_flights.csv"
+    unix_script = "scrapy runspider scrap_airport_flights/spiders/" + airport + ".py -O ./data/" + airport + "/raw_flights.csv"
 
     try:
         if platform.system() == "Windows":
@@ -18,7 +14,5 @@ def scrap():
         print("An error occurred while executing the scraping script.")
         exit(1)  
         
-    print("Data scrapping completed successfully!")
-
 if __name__ == "__main__":
     scrap()
