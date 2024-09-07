@@ -1,11 +1,11 @@
 # Airport Departure Flights
 
-App to return all departure flights information of an specific airport in Ireland.
+Application to return all departure flights information for a specific airport in Ireland.
 
-This application was made to check how busy the airport gate's area will, it's very important for staffs working in the gate area, as I was when I created this application.
+This project began to check how busy the airport gate's area would be. This information is very important for staff working in the gate area, as I was when I created this application.
 
 ### Why not to create the arrives flights?
-As the purpose of this application was to check how busy the airport will be, having an arriving flights section wouldn't be useful for me. Because most of the customers in the landing area of the airport are airport's staffs and non-passengers in general, making it difficult to predict with flight information.
+Having an arriving flights section wouldn't be useful for the purpose of the project, which is to check how busy it will be, because most of the customers in the landing area of the airport are the airport's staffs and non-passengers in general, making it difficult to predict with flight information.
 
 ## 💻 Requirements
 
@@ -67,7 +67,7 @@ We will announce security updates via Security Advisories on our Security page a
   
 ## 📝 License
 
-This project is licensed under the [License](./docs/LICENSE).
+This project is licensed under the [MIT License](./docs/LICENSE).
 
 By using this project, you agree to follow and obey the terms and conditions of the license.
 
