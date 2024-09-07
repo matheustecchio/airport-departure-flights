@@ -4,12 +4,8 @@
         <meta charset="UTF-8">
         <title>Airport Departure Flights</title>
         <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script>
     </head>
-    <script>
-        function adjustIframeHeight(iframe) {
-            iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
-        }
-    </script>
     <body>
         <div class="header">
             <h1><a href="index.html">Airport Departure Flights</a></h1>
@@ -31,6 +27,14 @@
             because most of the customers in the landing area of the airport are the airport's staffs and non-passengers in general, 
             making it difficult to predict with flight information.
             </p>
+
+            <h3>How to use</h3>
+
+            <p>To use this application, follow these commands in your terminal or command prompt in the main directory:</p>
+
+            <blockquote>$ python3 cmd/main.py</blockquote>
+            
+            <p>This will update all the databases with live data.</p>
         </div>
         <div class="footer">
             <hr>
