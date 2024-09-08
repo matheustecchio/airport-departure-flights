@@ -15,4 +15,5 @@ def scrap(airport: str):
         exit(1)  
         
 if __name__ == "__main__":
-    scrap()
+    default_airport = "cork"
+    scrap(default_airport)

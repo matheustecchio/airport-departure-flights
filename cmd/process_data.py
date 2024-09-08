@@ -145,4 +145,5 @@ def process_data(airport: str):
     save(busy_times_df, df, airport)
             
 if __name__ == "__main__":
-    process_data()
+    default_airport = "cork"
+    process_data(default_airport)

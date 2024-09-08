@@ -23,7 +23,5 @@ def convert_csv_to_html(airport:str):
     export_html(df_csv_busy_times, df_csv_flights, airport)
     
 if __name__ == "__main__":
-    convert_csv_to_html()
-    
-    
-    
+    default_airport = "cork"
+    convert_csv_to_html(default_airport)
