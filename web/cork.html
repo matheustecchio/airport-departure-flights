@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Airport Departure Flights</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <div class="header">
+            <h1><a href="index.html">Airport Departure Flights</a></h1>
+            <div class="nav-bar">
+                <div class="nav-option" id="cork-option">
+                    <a href="cork.html">Cork</a>
+                </div>
+                <div class="nav-option" id="dublin-option">
+                    <a href="dublin.html">Dublin</a>
+                </div>
+                <div class="nav-option" id="shannon-option">
+                    <a href="shannon.html">Shannon</a>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <h2>Cork</h2>
+            <div class="content-flex">
+                <div class="table busy-times">
+                    <div id="table-title"><h3>Busy Times</h3></div>
+                    <iframe src="../data/cork/busy_times.html" title="cork-busy-times" onload="adjustIframeHeight(this)"></iframe>
+                </div>
+                <div class="table flights">
+                    <div id="table-title"><h3>Flights</h3></div>
+                    <iframe src="../data/cork/flights_processed.html" title="cork-departure-flights" onload="adjustIframeHeight(this)"></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <hr>
+            <p>Have a look at the <a href="https://github.com/matheustecchio/airport-departure-flights">repository</a> for more relevant information!</p>
+            <p>This project is under the MIT License.</p>
+            <p>Copyright (c) 2024 <a href="https://github.com/matheustecchio">Matheus Tecchio</a>.</p>
+        </div>
+    </body>
+</html>
+
