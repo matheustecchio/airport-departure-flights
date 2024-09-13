@@ -23,13 +23,15 @@
         </div>
         <div class="content">
             <h2>Dublin</h2>
-            <div class="busy-times">
-                <h3>Busy Times</h3>
-                <iframe src="../data/dublin/busy_times.html" title="dublin-busy-times" onload="adjustIframeHeight(this)"></iframe>
-            </div>
-            <div class="flights">
-                <h3>Flights</h3>
-                <iframe src="../data/dublin/flights_processed.html" title="dublin-departure-flights" onload="adjustIframeHeight(this)"></iframe>
+            <div class="content-flex">
+                <div class="table busy-times">
+                    <div id="table-title"><h3>Busy Times</h3></div>
+                    <iframe src="../data/dublin/busy_times.html" title="dublin-busy-times" onload="adjustIframeHeight(this)"></iframe>
+                </div>
+                <div class="table flights">
+                    <div id="table-title"><h3>Flights</h3></div>
+                    <iframe src="../data/dublin/flights_processed.html" title="dublin-departure-flights" onload="adjustIframeHeight(this)"></iframe>
+                </div>
             </div>
         </div>
         <div class="footer">
