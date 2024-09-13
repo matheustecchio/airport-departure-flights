@@ -3,10 +3,12 @@
 All notable changes to this project will be documented in this file.
 To know about supported security versions, see [SECURITY](./SECURITY.md)
 
-## Unreleased
+## Version 1.2 - 2024-09-13
 
 ### Added
 - Index page
+- Better styling
+- Responsive interface
 
 ### Removed
 - Repeated code in cmd/ 
