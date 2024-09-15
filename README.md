@@ -7,6 +7,13 @@ This project began to check how busy the airport gate's area would be. This info
 ### Why not to create the arrival flights?
 Having an arriving flights section wouldn't be useful for the purpose of the project, which is to check how busy it will be, because most of the customers in the landing area of the airport are the airport's staffs and non-passengers in general, making it difficult to predict with flight information.
 
+# Technologies
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
+
 ## 💻 Requirements
 
 The following requirements must be met to use this project:
@@ -23,7 +30,7 @@ To install this application, run this command:
 git clone https://github.com/matheustecchio/airport-departure-flights.git
 ```
 
-## 🖱 How to use
+## 🖱️ How to use
 
 To use this application, follow these commands in your terminal or command prompt in the main directory:
 
