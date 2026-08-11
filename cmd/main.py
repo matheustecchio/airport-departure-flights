@@ -1,6 +1,13 @@
-from process_data import process_data
-from scrap import scrap
-from convert_csv_to_html import convert_csv_to_html
+try:
+    from process_data import process_data
+    from scrap import scrap
+    from convert_csv_to_html import convert_csv_to_html
+except ModuleNotFoundError as error:
+    raise SystemExit(
+        f"Missing Python dependency: {error.name}\n"
+        "Install the project dependencies with:\n"
+        "  python3 -m pip install -r requirements.txt"
+    ) from error
 
 airport_list = ["cork", "dublin", "shannon"]
 
@@ -12,7 +19,7 @@ def main():
             print(f"Error occurred while scraping {airport}: {str(e)}")
             exit(1)
         else:
-            print(f"Data scrapping completed successfully for {airport}.")
+            print(f"Data scraping completed successfully for {airport}.")
         
         try:
             process_data(airport)
@@ -32,4 +39,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

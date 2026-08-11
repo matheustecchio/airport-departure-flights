@@ -1,19 +1,48 @@
+import os
 import subprocess
-import platform
+import sys
+from pathlib import Path
+
+
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+SPIDERS_DIR = PROJECT_ROOT / "scrap_airport_flights" / "spiders"
+DATA_DIR = PROJECT_ROOT / "data"
+
 
 def scrap(airport: str):
-    windows_script = "scrapy runspider .\\scrap_airport_flights\\spiders\\" + airport + ".py -O .\\data\\cork\\raw_flights.csv"
-    unix_script = "scrapy runspider scrap_airport_flights/spiders/" + airport + ".py -O ./data/" + airport + "/raw_flights.csv"
+    spider_path = SPIDERS_DIR / f"{airport}.py"
+    output_path = DATA_DIR / airport / "raw_flights.csv"
 
-    try:
-        if platform.system() == "Windows":
-            process = subprocess.run(["powershell", "-Command", windows_script], capture_output=True, text=True)
-        else:
-            process = subprocess.run(unix_script, shell=True, capture_output=True, text=True)
-    except:
-        print("An error occurred while executing the scraping script.")
-        exit(1)  
-        
+    if not spider_path.is_file():
+        raise ValueError(f"Unknown airport spider: {airport}")
+
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    output_path.unlink(missing_ok=True)
+
+    subprocess.run(
+        [
+            sys.executable,
+            "-m",
+            "scrapy",
+            "runspider",
+            str(spider_path),
+            "-O",
+            str(output_path),
+        ],
+        cwd=PROJECT_ROOT,
+        check=True,
+        env={
+            **os.environ,
+            "SCRAPY_SETTINGS_MODULE": "scrap_airport_flights.settings",
+        },
+    )
+
+    if not output_path.is_file() or output_path.stat().st_size == 0:
+        raise RuntimeError(
+            f"Scraper produced no flight data for {airport}. "
+            "FlightAware may be unavailable or its page structure may have changed."
+        )
+
+
 if __name__ == "__main__":
-    default_airport = "cork"
-    scrap(default_airport)
+    scrap("cork")
