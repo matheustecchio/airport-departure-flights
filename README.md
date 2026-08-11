@@ -14,36 +14,59 @@ Having an arriving flights section wouldn't be useful for the purpose of the pro
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
 
-## 💻 Requirements
+## Requirements
 
-The following requirements must be met to use this project:
+- Python 3.9 through Python 3.12
+- `pip`
+- An internet connection for installing packages and retrieving flight data
 
-- Install `python3`. - [Download link](https://www.python.org/downloads/)
-- Make sure to install all the required libraries/framework dependencies.
- - found it at [requiraments.txt](./requirements.txt).
+The direct Python dependencies are listed in [requirements.txt](./requirements.txt).
 
-## 💾 Installation
+## Installation
 
-To install this application, run this command:
+Clone the repository and move into it:
 
-```
+```bash
 git clone https://github.com/matheustecchio/airport-departure-flights.git
+cd airport-departure-flights
 ```
 
-## 🖱️ How to use
+Create an isolated environment and install the dependencies on Linux or macOS:
 
-To use this application, follow these commands in your terminal or command prompt in the main directory:
-
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python3 -m pip install --upgrade pip
+python3 -m pip install -r requirements.txt
 ```
+
+On Windows PowerShell, use:
+
+```powershell
+py -m venv .venv
+.venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+```
+
+## How to use
+
+Activate the virtual environment whenever you open a new terminal, then run the application from the repository root:
+
+```bash
+source .venv/bin/activate
 python3 cmd/main.py
 ```
 
-This will update all the databases with live data.
+On Windows, use `python cmd/main.py` after activating the environment.
 
-Then, open the html file containing the application data in a more readable way.
-[html/index.html](/html/index.html)
+The command retrieves the current departure data, processes it, and generates the dashboard tables under `data/`. When it completes, open [web/index.html](./web/index.html) in a browser.
 
-Or access the databases directly from [./data](./data/) where you will find 3 directories(Cork, Dublin Shannon), containing the application data separated by airports
+If you see `ModuleNotFoundError`, verify that the virtual environment is active and run:
+
+```bash
+python3 -m pip install -r requirements.txt
+```
 
 ---
 
