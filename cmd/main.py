@@ -11,31 +11,26 @@ except ModuleNotFoundError as error:
 
 airport_list = ["cork", "dublin", "shannon"]
 
+
+def run_stage(airport, stage_name, action):
+    try:
+        action(airport)
+    except Exception as error:
+        raise RuntimeError(
+            f"Error occurred while {stage_name} {airport}: {error}"
+        ) from error
+
+    print(f"Data {stage_name} completed successfully for {airport}.")
+
+
 def main():
     for airport in airport_list:
-        try:
-            scrap(airport)
-        except Exception as e:
-            print(f"Error occurred while scraping {airport}: {str(e)}")
-            exit(1)
-        else:
-            print(f"Data scraping completed successfully for {airport}.")
-        
-        try:
-            process_data(airport)
-        except Exception as e:
-            print(f"Error occurred while processing {airport}: {str(e)}")
-            exit(1)
-        else:
-            print(f"Data processing completed successfully for {airport}.")
-        
-        try:
-            convert_csv_to_html(airport)
-        except Exception as e:
-            print(f"Error occurred while converting {airport} data to HTML: {str(e)}")
-            exit(1)
-        else:
-            print(f"Data conversion to HTML completed successfully for {airport}.")
+        run_stage(airport, "scraping", scrap)
+        run_stage(airport, "processing", process_data)
+        run_stage(airport, "conversion to HTML", convert_csv_to_html)
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except RuntimeError as error:
+        raise SystemExit(str(error)) from error

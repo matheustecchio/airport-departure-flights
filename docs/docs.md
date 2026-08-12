@@ -28,3 +28,18 @@
 
 > Some `Destination Name` has Unicode characters which represent non-ASCII characters.
 
+## Dashboard refresh server
+
+Run `python3 cmd/server.py` from the repository root and open `http://127.0.0.1:8000/web/index.html`.
+
+For each request to a top-level page (`index.html`, `cork.html`, `dublin.html`, or `shannon.html`), the server:
+
+1. Runs the full pipeline in `cmd/main.py` for Cork, Dublin, and Shannon.
+2. Replaces the ignored files under `data/<airport>/`.
+3. Returns the requested page only after all generated tables are ready.
+
+Requests for CSS, JavaScript, images, and generated iframe HTML do not start another refresh. Refreshes are serialized to prevent concurrent writes to `data/`, and HTML responses use no-cache headers so the browser requests the latest generated tables.
+
+If any scraping, processing, or conversion stage fails, the server returns HTTP `503` rather than serving a page with partially refreshed data. The server binds to `127.0.0.1` by default; do not expose it publicly without adding appropriate access controls and request throttling.
+
+Opening `web/index.html` directly does not run Python. Use `python3 cmd/main.py` for a one-time refresh when the HTTP server is not needed.

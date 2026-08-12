@@ -51,22 +51,32 @@ python -m pip install -r requirements.txt
 
 ## How to use
 
-Activate the virtual environment whenever you open a new terminal, then run the application from the repository root:
+Activate the virtual environment whenever you open a new terminal, then run the dashboard server from the repository root:
 
 ```bash
 source .venv/bin/activate
-python3 cmd/main.py
+python3 cmd/server.py
 ```
 
-On Windows, use `python cmd/main.py` after activating the environment.
+On Windows, use `python cmd/server.py` after activating the environment.
 
-The command retrieves the current departure data, processes it, and generates the dashboard tables under `data/`. When it completes, open [web/index.html](./web/index.html) in a browser.
+Open [http://127.0.0.1:8000/web/index.html](http://127.0.0.1:8000/web/index.html) while the server is running. Every landing or airport dashboard page load retrieves current departure data, processes it, and regenerates the tables under `data/` before returning the page. Stop the server with `Ctrl+C`.
+
+The refresh runs before the page is returned, so a reload can take several seconds depending on the upstream response. Opening `web/index.html` directly with a `file://` URL only displays existing generated data and cannot run Python.
+
+To refresh the generated data once without starting the server, run:
+
+```bash
+python3 cmd/main.py
+```
 
 If you see `ModuleNotFoundError`, verify that the virtual environment is active and run:
 
 ```bash
 python3 -m pip install -r requirements.txt
 ```
+
+If a live refresh fails, the server returns a `503` page with the failed pipeline stage. Check the server terminal for the Scrapy details and reload to try again.
 
 ---
 
