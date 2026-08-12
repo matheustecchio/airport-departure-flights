@@ -19,6 +19,11 @@ function setMeasuredIframeHeight(iframe, iframeDocument) {
     }
 }
 
+function revealStyledIframe(iframe, iframeDocument) {
+    iframe.classList.add("is-ready");
+    setMeasuredIframeHeight(iframe, iframeDocument);
+}
+
 function setIframeAvailability(iframe, isAvailable) {
     const frame = iframe.closest(".iframe-frame");
 
@@ -52,18 +57,33 @@ function setIframeAvailability(iframe, isAvailable) {
 }
 
 function applyIframeStyles(iframe, iframeDocument) {
-    if (!iframeDocument?.head || iframeDocument.getElementById("airport-dashboard-styles")) {
+    if (!iframeDocument?.head) {
+        setIframeAvailability(iframe, false);
         return;
     }
 
     iframeDocument.documentElement.classList.add("embedded-data");
+
+    const existingStylesheet = iframeDocument.getElementById("airport-dashboard-styles");
+
+    if (existingStylesheet) {
+        if (existingStylesheet.sheet) {
+            revealStyledIframe(iframe, iframeDocument);
+        } else {
+            setIframeAvailability(iframe, false);
+        }
+        return;
+    }
 
     const stylesheet = iframeDocument.createElement("link");
     stylesheet.id = "airport-dashboard-styles";
     stylesheet.rel = "stylesheet";
     stylesheet.href = new URL("style.css", window.location.href).href;
     stylesheet.addEventListener("load", function () {
-        setMeasuredIframeHeight(iframe, iframeDocument);
+        revealStyledIframe(iframe, iframeDocument);
+    });
+    stylesheet.addEventListener("error", function () {
+        setIframeAvailability(iframe, false);
     });
     iframeDocument.head.appendChild(stylesheet);
 }
@@ -83,7 +103,6 @@ function adjustIframeHeight(iframe) {
 
         setIframeAvailability(iframe, true);
         applyIframeStyles(iframe, iframeDocument);
-        setMeasuredIframeHeight(iframe, iframeDocument);
     } catch (_error) {
         setIframeAvailability(iframe, false);
     }

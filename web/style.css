@@ -574,6 +574,11 @@ code {
     min-height: 220px;
     border: 0;
     background: var(--color-surface);
+    visibility: hidden;
+}
+
+.iframe-frame iframe.is-ready {
+    visibility: visible;
 }
 
 .iframe-frame iframe[hidden] {
