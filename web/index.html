@@ -1,52 +1,141 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Airport Departure Flights</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Review departure activity and busy periods for Cork, Dublin, and Shannon airports.">
+        <title>Airport Departure Flights</title>
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
         <link rel="stylesheet" href="style.css">
         <script src="script.js" defer></script>
     </head>
     <body>
-        <div class="header">
-            <h1><a href="index.html">Airport Departure Flights</a></h1>
-            <div class="nav-bar">
-                <div class="nav-option" id="cork-option">
-                    <a href="cork.html">Cork</a>
+        <a class="skip-link" href="#main-content">Skip to main content</a>
+
+        <header class="app-header">
+            <div class="shell app-header__inner">
+                <a class="brand" href="index.html" aria-label="Airport Departure Flights home">
+                    <span class="brand__mark" aria-hidden="true">
+                        <img src="assets/icon.png" alt="">
+                    </span>
+                    <span class="brand__text">
+                        <span class="brand__context">Irish airports</span>
+                        <span class="brand__name">Departure Flights</span>
+                    </span>
+                </a>
+
+                <nav class="airport-nav" aria-label="Airport dashboards">
+                    <a class="airport-nav__link" href="cork.html">
+                        <span>Cork</span>
+                        <span class="airport-nav__code">ORK</span>
+                    </a>
+                    <a class="airport-nav__link" href="dublin.html">
+                        <span>Dublin</span>
+                        <span class="airport-nav__code">DUB</span>
+                    </a>
+                    <a class="airport-nav__link" href="shannon.html">
+                        <span>Shannon</span>
+                        <span class="airport-nav__code">SNN</span>
+                    </a>
+                </nav>
+            </div>
+        </header>
+
+        <main id="main-content" class="shell page-main">
+            <section class="page-intro" aria-labelledby="page-title">
+                <div class="page-intro__content">
+                    <p class="eyebrow">Airport departure overview</p>
+                    <h1 id="page-title">Airport Departure Flights</h1>
+                    <p class="page-intro__summary">
+                        Check busy periods and scheduled departures across Cork, Dublin, and Shannon.
+                    </p>
                 </div>
-                <div class="nav-option" id="dublin-option">
-                    <a href="dublin.html">Dublin</a>
+            </section>
+
+            <section class="airport-section" aria-labelledby="airport-selection-title">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">Choose a dashboard</p>
+                        <h2 id="airport-selection-title">Irish departure boards</h2>
+                    </div>
+                    <p>Compare expected gate-area demand by airport.</p>
                 </div>
-                <div class="nav-option" id="shannon-option">
-                    <a href="shannon.html">Shannon</a>
+
+                <div class="airport-grid">
+                    <a class="airport-card" href="cork.html">
+                        <span class="airport-card__code">ORK</span>
+                        <span class="airport-card__details">
+                            <strong>Cork Airport</strong>
+                            <small>Busy times and departures</small>
+                        </span>
+                        <span class="airport-card__action">Open board</span>
+                    </a>
+                    <a class="airport-card" href="dublin.html">
+                        <span class="airport-card__code">DUB</span>
+                        <span class="airport-card__details">
+                            <strong>Dublin Airport</strong>
+                            <small>Busy times and departures</small>
+                        </span>
+                        <span class="airport-card__action">Open board</span>
+                    </a>
+                    <a class="airport-card" href="shannon.html">
+                        <span class="airport-card__code">SNN</span>
+                        <span class="airport-card__details">
+                            <strong>Shannon Airport</strong>
+                            <small>Busy times and departures</small>
+                        </span>
+                        <span class="airport-card__action">Open board</span>
+                    </a>
+                </div>
+            </section>
+
+            <section class="workflow" aria-labelledby="workflow-title">
+                <div class="workflow__intro">
+                    <p class="eyebrow">How it works</p>
+                    <h2 id="workflow-title">Set up, refresh, review</h2>
+                    <p>Install the project dependencies once, then generate the latest local flight data.</p>
+                </div>
+                <ol class="workflow__steps">
+                    <li>
+                        <span class="workflow__number">01</span>
+                        <div>
+                            <h3>Install dependencies</h3>
+                            <p>Create and activate a virtual environment, then run:</p>
+                            <code class="workflow__command">pip install -r requirements.txt</code>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="workflow__number">02</span>
+                        <div>
+                            <h3>Refresh and review</h3>
+                            <p>Generate the latest data, then open an airport dashboard.</p>
+                            <code class="workflow__command">python3 cmd/main.py</code>
+                        </div>
+                    </li>
+                </ol>
+            </section>
+
+            <aside class="purpose-note" aria-labelledby="purpose-title">
+                <p class="eyebrow">Operational focus</p>
+                <h2 id="purpose-title">Why departures?</h2>
+                <p>
+                    Departing passengers gather in the gate area, so scheduled departures are a useful signal for staffing and expected crowding. Arrivals do not represent that same passenger flow.
+                </p>
+            </aside>
+        </main>
+
+        <footer class="site-footer">
+            <div class="shell site-footer__inner">
+                <div>
+                    <strong>Airport Departure Flights</strong>
+                    <p>Operational departure information for Irish airports.</p>
+                </div>
+                <div class="site-footer__meta">
+                    <a href="https://github.com/matheustecchio/airport-departure-flights">Repository</a>
+                    <span>MIT License</span>
+                    <span>Copyright (c) 2024 <a href="https://github.com/matheustecchio">Matheus Tecchio</a></span>
                 </div>
             </div>
-        </div>
-        <div class="content">
-            <p>Application to return all departure flights information for a specific airport in Ireland.</p>
-            <p>This project began to check how busy the airport gate's area would be. 
-            This information is very important for staff working in the gate area, as I was when I created this application.</p>
-            
-            <h3>Why not to create the arrival flights?</h3>
-            <p>Having an arriving flights section wouldn't be useful for the purpose of the project, which is to check how busy it will be, 
-            because most of the customers in the landing area of the airport are the airport's staffs and non-passengers in general, 
-            making it difficult to predict with flight information.
-            </p>
-
-            <h3>How to use</h3>
-
-            <p>To use this application, follow these commands in your terminal or command prompt in the main directory:</p>
-
-            <blockquote>$ python3 cmd/main.py</blockquote>
-            
-            <p>This will update all the databases with live data.</p>
-        </div>
-        <div class="footer">
-            <hr>
-            <p>Have a look at the <a href="https://github.com/matheustecchio/airport-departure-flights">repository</a> for more relevant information!</p>
-            <p>This project is under the MIT License.</p>
-            <p>Copyright (c) 2024 <a href="https://github.com/matheustecchio">Matheus Tecchio</a>.</p>
-        </div>
+        </footer>
     </body>
 </html>
-
