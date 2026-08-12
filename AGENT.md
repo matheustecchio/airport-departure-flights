@@ -9,6 +9,7 @@
 ## Repository map
 
 - `cmd/main.py` orchestrates scrape, processing, and HTML conversion for every supported airport.
+- `cmd/server.py` serves the project locally and runs the full pipeline before each top-level dashboard page response.
 - `cmd/scrap.py` invokes Scrapy and writes `data/<airport>/raw_flights.csv`.
 - `cmd/process_data.py` adds aircraft capacity estimates and writes `busy_times.csv` and `flights_processed.csv`.
 - `cmd/convert_csv_to_html.py` converts the processed CSV files into the HTML tables embedded by the dashboard.
@@ -29,18 +30,27 @@
   ```
 
 - On Windows PowerShell, activate with `.venv\Scripts\Activate.ps1` and use `python` in place of `python3`.
-- Refresh all airport data from the repository root with:
+- Start the local dashboard from the repository root with:
+
+  ```bash
+  python3 cmd/server.py
+  ```
+
+  Open `http://127.0.0.1:8000/web/index.html`. Each top-level dashboard page load runs the full refresh pipeline before serving the page; generated table and asset requests do not trigger another refresh.
+  Keep this development server bound to localhost unless the user explicitly requests a hardened deployment. It has no authentication or rate limiting.
+- Refresh all airport data once without starting the server with:
 
   ```bash
   python3 cmd/main.py
   ```
 
   This command requires network access, contacts FlightAware, replaces generated airport files under `data/`, and exits after the first airport failure.
-- After generating data, open `web/index.html` in a browser. Airport pages load their generated tables from `../data/<airport>/`.
+- When using the one-shot command, open `web/index.html` after generating data. Airport pages load their generated tables from `../data/<airport>/`.
 
 ## Architecture and implementation constraints
 
 - Preserve the pipeline order: scrape raw CSV, process CSV, then convert the results to HTML. Keep the column contract documented in `docs/docs.md` consistent across spiders and processors.
+- Keep automatic refreshes limited to top-level pages under `web/`. Do not trigger the pipeline for assets or generated table iframe requests, and retain serialized refreshes to prevent concurrent writes under `data/`.
 - Keep airport support synchronized across `cmd/main.py`, `scrap_airport_flights/spiders/<airport>.py`, and `web/<airport>.html`; update landing-page and navigation links when the supported set changes.
 - Treat FlightAware markup and its CSS selectors as an external interface. If a selector changes, update every affected spider and `docs/docs.md`, then verify that all yielded lists remain aligned before indexing them by flight number.
 - Keep aircraft capacity mapping changes in `cmd/process_data.py` explicit. Unknown aircraft currently produce a missing `Minimum Passengers` value; do not silently invent a capacity.
@@ -61,6 +71,7 @@
 
 - Update `README.md` when setup steps, supported Python versions, dependencies, runtime commands, supported airports, or user-visible behavior change.
 - Update `docs/docs.md` when scraper selectors, scraped fields, or output columns change.
+- Update `docs/docs.md` when the refresh-server request flow or generated-data lifecycle changes.
 - Add user-visible release notes to `docs/CHANGELOG.md` when preparing a release-worthy change.
 - Keep `AGENT.md` and `CLAUDE.md` substantively synchronized whenever repository guidance changes.
 
