@@ -6,7 +6,8 @@ We actively maintain and release security updates for the following versions of 
 
 | Version | Supported |
 |---------|-----------|
-|1.0|✅|
+|1.3|✅|
+|< 1.3|❌|
 
 ## Reporting a Vulnerability
 
