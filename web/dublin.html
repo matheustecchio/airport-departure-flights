@@ -1,46 +1,105 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Airport Departure Flights</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Review Dublin Airport departure activity, busy periods, and scheduled flights.">
+        <title>Dublin Departures | Airport Departure Flights</title>
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
         <link rel="stylesheet" href="style.css">
         <script src="script.js" defer></script>
     </head>
     <body>
-        <div class="header">
-            <h1><a href="index.html">Airport Departure Flights</a></h1>
-            <div class="nav-bar">
-                <div class="nav-option" id="cork-option">
-                    <a href="cork.html">Cork</a>
+        <a class="skip-link" href="#main-content">Skip to main content</a>
+
+        <header class="app-header">
+            <div class="shell app-header__inner">
+                <a class="brand" href="index.html" aria-label="Airport Departure Flights home">
+                    <span class="brand__mark" aria-hidden="true">
+                        <img src="assets/icon.png" alt="">
+                    </span>
+                    <span class="brand__text">
+                        <span class="brand__context">Irish airports</span>
+                        <span class="brand__name">Departure Flights</span>
+                    </span>
+                </a>
+
+                <nav class="airport-nav" aria-label="Airport dashboards">
+                    <a class="airport-nav__link" href="cork.html">
+                        <span>Cork</span>
+                        <span class="airport-nav__code">ORK</span>
+                    </a>
+                    <a class="airport-nav__link is-active" href="dublin.html" aria-current="page">
+                        <span>Dublin</span>
+                        <span class="airport-nav__code">DUB</span>
+                    </a>
+                    <a class="airport-nav__link" href="shannon.html">
+                        <span>Shannon</span>
+                        <span class="airport-nav__code">SNN</span>
+                    </a>
+                </nav>
+            </div>
+        </header>
+
+        <main id="main-content" class="shell page-main">
+            <section class="airport-summary" aria-labelledby="page-title">
+                <div>
+                    <p class="eyebrow">Airport dashboard / DUB</p>
+                    <h1 id="page-title">Dublin departures</h1>
+                    <p>Review expected gate-area pressure and the scheduled flights behind it.</p>
                 </div>
-                <div class="nav-option" id="dublin-option">
-                    <a href="dublin.html">Dublin</a>
+                <div class="data-status" aria-label="Data refresh information">
+                    <span class="data-status__indicator" aria-hidden="true"></span>
+                    <span>
+                        <strong>Generated data view</strong>
+                        <small>Refresh with python3 cmd/main.py</small>
+                    </span>
                 </div>
-                <div class="nav-option" id="shannon-option">
-                    <a href="shannon.html">Shannon</a>
+            </section>
+
+            <section class="dashboard-grid" aria-label="Dublin departure data">
+                <article class="data-panel data-panel--busy">
+                    <header class="data-panel__header">
+                        <div>
+                            <p class="eyebrow">Demand overview</p>
+                            <h2>Busy times</h2>
+                        </div>
+                        <span class="data-panel__tag">DUB</span>
+                    </header>
+                    <p class="data-panel__description">Departure volume grouped into operational time windows.</p>
+                    <div class="iframe-frame">
+                        <iframe src="../data/dublin/busy_times.html" title="Dublin Airport busy times" onload="adjustIframeHeight(this)"></iframe>
+                    </div>
+                </article>
+
+                <article class="data-panel data-panel--flights">
+                    <header class="data-panel__header">
+                        <div>
+                            <p class="eyebrow">Flight detail</p>
+                            <h2>Departures</h2>
+                        </div>
+                        <span class="data-panel__tag">Schedule</span>
+                    </header>
+                    <p class="data-panel__description">The flights included in the latest generated departure view.</p>
+                    <div class="iframe-frame">
+                        <iframe src="../data/dublin/flights_processed.html" title="Dublin Airport departure flights" onload="adjustIframeHeight(this)"></iframe>
+                    </div>
+                </article>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="shell site-footer__inner">
+                <div>
+                    <strong>Airport Departure Flights</strong>
+                    <p>Operational departure information for Irish airports.</p>
+                </div>
+                <div class="site-footer__meta">
+                    <a href="https://github.com/matheustecchio/airport-departure-flights">Repository</a>
+                    <span>MIT License</span>
+                    <span>Copyright (c) 2024 <a href="https://github.com/matheustecchio">Matheus Tecchio</a></span>
                 </div>
             </div>
-        </div>
-        <div class="content">
-            <h2>Dublin</h2>
-            <div class="content-flex">
-                <div class="table busy-times">
-                    <div id="table-title"><h3>Busy Times</h3></div>
-                    <iframe src="../data/dublin/busy_times.html" title="dublin-busy-times" onload="adjustIframeHeight(this)"></iframe>
-                </div>
-                <div class="table flights">
-                    <div id="table-title"><h3>Flights</h3></div>
-                    <iframe src="../data/dublin/flights_processed.html" title="dublin-departure-flights" onload="adjustIframeHeight(this)"></iframe>
-                </div>
-            </div>
-        </div>
-        <div class="footer">
-            <hr>
-            <p>Have a look at the <a href="https://github.com/matheustecchio/airport-departure-flights">repository</a> for more relevant information!</p>
-            <p>This project is under the MIT License.</p>
-            <p>Copyright (c) 2024 <a href="https://github.com/matheustecchio">Matheus Tecchio</a>.</p>
-        </div>
+        </footer>
     </body>
 </html>
-
